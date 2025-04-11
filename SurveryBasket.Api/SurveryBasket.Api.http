@@ -1,6 +1,0 @@
-@SurveryBasket.Api_HostAddress = http://localhost:5050
-
-GET {{SurveryBasket.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

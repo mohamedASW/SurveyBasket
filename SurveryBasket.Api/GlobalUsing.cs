@@ -1,0 +1,13 @@
+﻿global using SurveryBasket.Api.Services;
+global using Mapster;
+global using Microsoft.AspNetCore.Mvc;
+global using SurveryBasket.Api.Contracts.Requests;
+global using SurveryBasket.Api.Contracts.Responses;
+global using SurveryBasket.Api.Models;
+global using SurveryBasket.Api.Map;
+global using FluentValidation;
+global using MapsterMapper;
+global using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
+global using SurveryBasket.Api;
+global using System.Reflection;
+global using Microsoft.EntityFrameworkCore;
