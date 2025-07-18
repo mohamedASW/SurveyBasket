@@ -12,7 +12,7 @@ public class PollRequestValidation : AbstractValidator<PollRequest>
             .GreaterThanOrEqualTo(DateOnly.FromDateTime(DateTime.Today));
         RuleFor(x => x.EndsAt).NotEmpty();
         RuleFor(x => x).Must(hasValidEndDate).WithName(nameof(PollRequest.EndsAt))
-            .WithMessage("{PropertyName} must be greater than or equal start date");
+            .WithMessage("{PropertyName} must be greater than or equal startdate");
         
     }
 

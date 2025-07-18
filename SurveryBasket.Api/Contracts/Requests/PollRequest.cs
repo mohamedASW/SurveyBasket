@@ -1,8 +1,7 @@
 ﻿namespace SurveryBasket.Api.Contracts.Requests;
 
-public record PollRequest(
+public sealed record PollRequest(
     string Title,
     string Summary, 
-    bool IsPublished, 
     DateOnly StartsAt, 
     DateOnly EndsAt   );
