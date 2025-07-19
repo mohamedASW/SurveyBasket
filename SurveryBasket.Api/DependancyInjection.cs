@@ -1,6 +1,4 @@
-﻿
-
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
@@ -37,7 +35,8 @@ public static class DependancyInjection
         services.AddDistributedMemoryCache();
         services.AddJwtProviderOptions(configurationManager);
         services.AddHangfireConfig(configurationManager);
-        services.Configure<MailSettings>(configurationManager.GetSection(nameof(MailSettings)));
+        //services.Configure<MailSettings>(configurationManager.GetSection(nameof(MailSettings)));
+        services.AddOptions<MailSettings>().BindConfiguration(nameof(MailSettings)).ValidateDataAnnotations().ValidateOnStart();
         services.AddScoped<IPollService, PollService>();
         services.AddScoped<IAuthService, AuthService>();
         services.AddSingleton<IJwtProvider, JwtProvider>();

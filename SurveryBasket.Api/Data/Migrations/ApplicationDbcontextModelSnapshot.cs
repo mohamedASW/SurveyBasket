@@ -8,7 +8,7 @@ using SurveryBasket.Api.Data;
 
 #nullable disable
 
-namespace SurveryBasket.Api.data.Migrations
+namespace SurveryBasket.Api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbcontext))]
     partial class ApplicationDbcontextModelSnapshot : ModelSnapshot

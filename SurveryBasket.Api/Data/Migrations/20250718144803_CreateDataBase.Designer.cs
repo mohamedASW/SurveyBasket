@@ -9,18 +9,18 @@ using SurveryBasket.Api.Data;
 
 #nullable disable
 
-namespace SurveryBasket.Api.data.Migrations
+namespace SurveryBasket.Api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbcontext))]
-    [Migration("20250711201026_AddIsDisabledColumn")]
-    partial class AddIsDisabledColumn
+    [Migration("20250718144803_CreateDataBase")]
+    partial class CreateDataBase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.5")
+                .HasAnnotation("ProductVersion", "9.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -48,106 +48,6 @@ namespace SurveryBasket.Api.data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClaimType = "permissions",
-                            ClaimValue = "polls:read",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClaimType = "permissions",
-                            ClaimValue = "polls:add",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClaimType = "permissions",
-                            ClaimValue = "polls:update",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ClaimType = "permissions",
-                            ClaimValue = "polls:delete",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ClaimType = "permissions",
-                            ClaimValue = "questions:read",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ClaimType = "permissions",
-                            ClaimValue = "questions:add",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ClaimType = "permissions",
-                            ClaimValue = "questions:update",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ClaimType = "permissions",
-                            ClaimValue = "users:read",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ClaimType = "permissions",
-                            ClaimValue = "users:add",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ClaimType = "permissions",
-                            ClaimValue = "users:update",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ClaimType = "permissions",
-                            ClaimValue = "roles:read",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ClaimType = "permissions",
-                            ClaimValue = "roles:add",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ClaimType = "permissions",
-                            ClaimValue = "roles:update",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ClaimType = "permissions",
-                            ClaimValue = "results:read",
-                            RoleId = "090703ff-7006-4f71-ac7f-c9b4446ff074"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>

@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog((context, configuration) =>
 {
-   configuration.ReadFrom.Configuration(context.Configuration);
+    configuration.ReadFrom.Configuration(context.Configuration);
 });
 builder.Services.AddControllers();
 builder.Services.AddDependencies(builder.Configuration);
@@ -24,29 +24,27 @@ var provider = scope.ServiceProvider.GetRequiredService<IApiVersionDescriptionPr
 await DefaultRoles.SeedDefaultRoles(roleManager);
 await DefaultUsers.SeedDefaultUsers(userManager);
 await DefaultRoleCliams.SeedDefaultRoleClaims(dbconttext);
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        
-        foreach (var desc in provider.ApiVersionDescriptions)
-        {
-            options.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json", $"survey basket { desc.GroupName.ToUpperInvariant()}");
-        }
-    });
-    app.UseHangfireDashboard("/jobs", new DashboardOptions()
-    {
 
-        Authorization = [
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+
+    foreach (var desc in provider.ApiVersionDescriptions)
+    {
+        options.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json", $"survey basket {desc.GroupName.ToUpperInvariant()}");
+    }
+});
+
+app.UseHangfireDashboard("/jobs", new DashboardOptions()
+{
+
+    Authorization = [
             new HangfireBasicAuthenticationFilter.HangfireCustomBasicAuthenticationFilter{
                 User = builder.Configuration.GetValue<string>("HangfireDashboredOptions:username"),
                 Pass = builder.Configuration.GetValue<string>("HangfireDashboredOptions:password")
             }
             ]
-    });
-}
+});
 RecurringJob.AddOrUpdate("SendPollNotificationEmail", () => notificationSerivce.SendNewPollNotification(null, default), Cron.Daily);
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
