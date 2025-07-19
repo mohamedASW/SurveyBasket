@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ## ⚙️ المتطلبات لتشغيل المشروع
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download)
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download)
 - قاعدة بيانات SQL Server
 - أدوات اختبار API مثل [Postman](https://www.postman.com/) أو `curl`
 
