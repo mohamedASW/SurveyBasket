@@ -15,42 +15,50 @@
 ## 📦 نقاط النهاية الرئيسية (Endpoints)
 
 ### 🔹 Authentication
-- `POST /api/Auth/Login`
-- `POST /api/Auth/Register`
+- `POST /Auth/`
+- `POST /Auth/register`
+- `POST /Auth/refresh`
+- `POST /Auth/forget-password`
+- `POST /Auth/reset-password`
+- `POST /Auth/confirm-email`
+- `POST /Auth/resend-confirmation-email`
 
 ### 🔹 Users
-- `GET /api/User`
-- `GET /api/User/{id}`
-- `PUT /api/User/{id}`
-- `DELETE /api/User/{id}`
+- `GET /api/Users`
+- `POST /api/Users`
+- `GET /api/Users/{id}`
+- `PUT /api/Users/{id}`
+- `PUT /api/Users/{id}/toggle-status`
+- `PUT /api/Users/{id}/unlock`
 
-### 🔹 Surveys
-- `GET /api/Survey`
-- `GET /api/Survey/{id}`
-- `POST /api/Survey`
-- `PUT /api/Survey/{id}`
-- `DELETE /api/Survey/{id}`
+### 🔹 Polls
+- `GET /v1/api/polls`
+- `GET /v1/api/polls/{id}`
+- `POST /v1/api/polls`
+- `PUT /v1/api/polls/{id}`
+- `PUT /v1/api/polls/{id}/toggle-status`
 
 ### 🔹 Questions
-- `GET /api/Question`
-- `GET /api/Question/{id}`
-- `POST /api/Question`
-- `PUT /api/Question/{id}`
-- `DELETE /api/Question/{id}`
+- `GET /api/Questions`
+- `GET /api/Questions/{id}`
+- `POST /api/Questions`
+- `PUT /api/Questions/{id}`
+- `PUT /api/Questions/{id}/toggle-status`
 
-### 🔹 Options
-- `GET /api/Option`
-- `GET /api/Option/{id}`
-- `POST /api/Option`
-- `PUT /api/Option/{id}`
-- `DELETE /api/Option/{id}`
+### 🔹 Account
+- `GET /me`
+- `PUT /me`
+- `PUT /me/change-password`
+- `PUT /me/change-email`
+- `POST /me/confirm-change-email`
+- `POST /me/confirm-new-email`
 
-### 🔹 Answers
-- `GET /api/Answer`
-- `GET /api/Answer/{id}`
-- `POST /api/Answer`
-- `PUT /api/Answer/{id}`
-- `DELETE /api/Answer/{id}`
+### 🔹 Roles
+- `GET /api/Roles`
+- `GET /api/Roles/{id}`
+- `POST /api/Roles`
+- `PUT /api/Roles/{id}`
+- `PUT /api/Roles/{id}/toggle-status`
 
 ---
 
@@ -59,7 +67,7 @@
 ### 📥 تسجيل الدخول:
 
 ```http
-POST /api/Auth/Login
+POST /api/Auth
 Content-Type: application/json
 
 {
